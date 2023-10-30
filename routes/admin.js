@@ -7,7 +7,7 @@ const admin=require('../middleware/adminmiddleware')
 /* create admin account API*/ 
 
 router.post('/register',adminController.createAdmin);
-router.post('/login',admin.adminsecure,adminController.loginAdmin);
+router.post('/login',adminController.loginAdmin);
 
 
 module.exports = router;

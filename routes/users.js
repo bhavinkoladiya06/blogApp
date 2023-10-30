@@ -8,7 +8,7 @@ const userMiddleware=require('../middleware/usermiddleware')
 router.post('/register',userController.createUser)
 
 /* login users account API. */
-router.post('/login',userMiddleware.userSecure,userController.loginUser)
+router.post('/login',userController.loginUser)
 
 
 /* Delete users account API. */

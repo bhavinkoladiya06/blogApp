@@ -43,10 +43,13 @@ exports.loginUser = async function (req, res, next) {
     if (!checkPass) {
       throw new Error("please enter Valid Password");
     }
+    const token = await jwt.sign({ id: data._id }, "USER");
+
 
     res.status(200).json({
       message: "Welcome to blog app",
       data,
+      token
     });
   } catch (error) {
     res.status(404).json({
